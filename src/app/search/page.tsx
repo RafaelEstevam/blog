@@ -4,7 +4,7 @@ import SearchContent from "./content";
 
 const Search = () => {
     return (
-        <div>
+        <div className="w-full">
             <Suspense fallback={<div>Loading...</div>}>
                 <SearchContent />
             </Suspense>

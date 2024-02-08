@@ -8,10 +8,11 @@ import {gql_client} from '../services';
 import PostList from "../components/postList.component";
 
 const SearchContent = () => {
+
+    const origin = window?.document.location.origin;
     const skip = 0;
     const searchParams = useSearchParams();
     const search = searchParams.get('q');
-    const category = searchParams.get('c');
 
     const [page, setPage] = useState(skip);
     const [postsList, setPosts] = useState<any[]>([]);
@@ -20,20 +21,7 @@ const SearchContent = () => {
 
     const handlePagination = useCallback(async () => {
 
-        const query = category ? gql`
-            query {
-                posts(
-                    where: {
-                        OR: {title_contains: "${search}"},
-                        AND: {categories_contains_some: ${category}}
-                    }, orderBy: createdAt_DESC){
-                    title,
-                    slug,
-                    shortText,
-                    categories,
-                }
-            }
-        ` : gql`
+        const query = gql`
             query {
                 posts(
                     where: {
@@ -56,21 +44,23 @@ const SearchContent = () => {
         setPage(page + 2);
         setLoading(false);
 
-    }, [page, postsList]);
+    }, [page, postsList, search]);
 
     useEffect(() => {
         handlePagination()
-    }, [])
+    }, [search])
 
     return loading ? (
         <h3>Carregando...</h3>
     ) : (
-        <>
+        <div className='w-full flex flex-col gap-10'>
             <div className='w-full'>
                 <p>Resultado de: <b>{search}</b></p>
             </div>
-            <PostList postsList={postsList} list />
-        </>
+            <div className='w-full'>
+                <PostList postsList={postsList} list {...{origin}} />
+            </div>
+        </div>
     )
 };
 

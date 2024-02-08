@@ -9,7 +9,9 @@ const SearchComponent = () => {
     const [term, setTerm] = useState('');
 
     const handleSubmit = useCallback((e: any) => {
-        router.push(`/search/?q=${term}`);
+        e.preventDefault()
+        const url = window.document.location.origin
+        router.push(`${url}/search/?q=${term}`);
     }, [term]);
 
     return (

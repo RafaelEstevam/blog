@@ -3,9 +3,9 @@ const Footer = () => {
         <>
         <footer className="bg-slate-800 px-24 w-full min-h-60 py-16 flex justify-between">
             <div className="w-1/2 gap-10 flex flex-col justify-center items-center">
-                <div>
-                    <h2 className="text-7xl font-bold">ED&D</h2>
-                    <p className="text-xs">Estevam Design & Desenvolvimento </p>
+                <div className="flex flex-col items-center gap-2">
+                    <h2 className="text-7xl font-bold">R&O</h2>
+                    <p className="text-xs">Blog pessoal sobre desenvolvimento web</p>
                 </div>
                 
             </div>

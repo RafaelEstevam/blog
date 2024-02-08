@@ -8,6 +8,7 @@ import { useParams } from 'next/navigation';
 
 const Category =  () => {
 
+    const origin = window.document.location.origin;
     const params = useParams();
     const {category} = params;
     const [posts, setPosts] = useState([]);
@@ -40,7 +41,7 @@ const Category =  () => {
             <div className='w-full'>
                 <h2><b>Categoria:</b> {category}</h2>
             </div>
-            <PostList postsList={posts} list />
+            <PostList postsList={posts} list {...{origin}} />
         </div>
     )
 };
