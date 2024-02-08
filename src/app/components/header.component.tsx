@@ -9,7 +9,7 @@ const Header = async () => {
                 <NavComponent />
             </div>
             <div className="flex justify-center text-center py-4 absolute inset-x-0">
-                <a href={'/'} className="relative z-20">
+                <a href={'/'}>
                     <h1 className="font-bold text-4xl">R&O</h1>
                 </a>
             </div>

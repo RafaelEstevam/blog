@@ -1,6 +1,7 @@
 import PostContent from "./content.component";
 import PostDetails from "./details.component";
 import PostImage from "./image.component";
+import PostShare from "./share.component";
 import PostTitle from "./title.component";
 
 export interface PostProps {
@@ -31,6 +32,7 @@ const PostComponent = (post:PostProps) => {
             <PostTitle {...{title}}/>
             <PostDetails {...{createdAt, autor}} />
             <PostContent {...{content}}/>
+            <PostShare {...post} />
         </>
     )
 };
