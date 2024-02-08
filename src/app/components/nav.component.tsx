@@ -25,6 +25,7 @@ const NavComponent = () => {
                 flex-col
                 items-left
                 gap-10
+                overflow-y-auto
                 xl:backdrop-blur-none
                 xl:relative
                 xl:bg-transparent
