@@ -19,7 +19,7 @@ const PostList = ({postsList, list}:any) => {
                                         </Link>
                                         <div className='flex gap-4 pt-2'>
                                             {post.categories?.map((category: any) => (
-                                                <p className='bg-slate-500 p-1 rounded-2xl text-xs'>{category}</p>
+                                                <p className='bg-slate-500 p-1 rounded-2xl text-xs' key={category}>{category}</p>
                                             ))}
                                         </div>
                                     </div>
@@ -39,7 +39,7 @@ const PostList = ({postsList, list}:any) => {
                                     </Link>
                                     <div className='flex gap-4 pt-2'>
                                         {post.categories?.map((category: any) => (
-                                            <p className='bg-slate-500 p-1 rounded-2xl text-xs'>{category}</p>
+                                            <p className='bg-slate-500 p-1 rounded-2xl text-xs' key={category}>{category}</p>
                                         ))}
                                     </div>
                                 </div>
@@ -55,7 +55,7 @@ const PostList = ({postsList, list}:any) => {
                                 </Link>
                                 <div className='flex gap-4 pt-2'>
                                     {post.categories?.map((category: any) => (
-                                        <p className='bg-slate-500 p-1 rounded-2xl text-xs'>{category}</p>
+                                        <p className='bg-slate-500 p-1 rounded-2xl text-xs' key={category}>{category}</p>
                                     ))}
                                 </div>
                             </div>
