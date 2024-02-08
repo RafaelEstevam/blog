@@ -54,10 +54,8 @@ const SearchContent = () => {
         <h3>Carregando...</h3>
     ) : (
         <div className='w-full flex flex-col gap-10'>
-            <div className='w-full'>
-                <p>Resultado de: <b>{search}</b></p>
-            </div>
-            <div className='w-full'>
+            <p>Resultado de: <b>{search}</b></p>
+            <div className='w-full flex flex-col gap-10'>
                 <PostList postsList={postsList} list {...{origin}} />
             </div>
         </div>

@@ -1,23 +1,23 @@
-'use client';
-
 import PostContent from "./content.component";
 import PostDetails from "./details.component";
 import PostImage from "./image.component";
 import PostTitle from "./title.component";
 
-interface PostProps {
-    post: {
-        title: string,
-        content: any,
-        gallery: any,
-        createdAt: string,
-        createdBy: any
-    }
+export interface PostProps {
+    title: string,
+    content: any,
+    gallery: any[],
+    slug: string,
+    categories?: string[],
+    shortText?: string,
+    createdBy: {
+        name: string,
+    },
+    createdAt: string,
+    updatedAt: string,
 }
 
-const PostComponent = ({post}:PostProps) => {
-
-    console.log(post);
+const PostComponent = (post:PostProps) => {
     
     const title= post.title;
     const content = post.content;
