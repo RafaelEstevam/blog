@@ -27,7 +27,7 @@ const PostComponent = (post:PostProps) => {
 
     return (
         <>
-            <PostImage {...{image}} />
+            <PostImage {...{image, title}} />
             <PostTitle {...{title}}/>
             <PostDetails {...{createdAt, autor}} />
             <PostContent {...{content}}/>

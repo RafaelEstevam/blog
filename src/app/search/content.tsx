@@ -16,7 +16,6 @@ const SearchContent = () => {
     const [page, setPage] = useState(skip);
     const [postsList, setPosts] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
-    const [morePosts, setMorePosts] = useState(true);
 
     const handlePagination = useCallback(async () => {
 
@@ -34,10 +33,6 @@ const SearchContent = () => {
             }`;
 
         const {posts}:any = await gql_client.request(query);
-
-        if(postsList.length === posts.length) {
-            setMorePosts(false)
-        }
 
         setPosts(posts);
         setPage(page + 2);

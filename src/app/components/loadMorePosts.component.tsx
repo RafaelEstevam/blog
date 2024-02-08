@@ -47,11 +47,7 @@ const LoadMorePosts = () => {
             {loading ? (
                 <p>Carregando...</p>
             ) : (
-                <div>
-                    <button disabled={!morePosts} onClick={() => handlePagination()}>
-                        {morePosts ? 'Carregar mais' : 'Sem novos posts'}
-                    </button>
-                </div>
+                <button className="w-full bg-slate-500 p-4 uppercase rounded-xl text-white font-bold" disabled={!morePosts} onClick={() => handlePagination()}>{morePosts ? 'Carregar mais' : 'Sem novos posts'}</button>
             )}
         </>
     )

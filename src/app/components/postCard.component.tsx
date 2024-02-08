@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import PostCategory from './postCategory.component';
 import { PostProps } from '../[slug]/components/post.component';
+import moment from 'moment';
 
 interface PostCardProps {
     post: PostProps,
@@ -16,9 +17,9 @@ const PostTitle = ({ title, post }: PostCardProps) => {
     return (
         <Link href={`${origin}/${post.slug}`}>
             {title === 'H2' ? (
-                <h2 className="text-5xl font-bold">{post.title}</h2>
+                <h2 className="text-3xl xl:text-5xl font-bold">{post.title}</h2>
             ) : (
-                <h3 className="text-4xl font-bold">{post.title}</h3>
+                <h3 className="text-3xl xl:text-4xl font-bold">{post.title}</h3>
             )}
         </Link>
     )
@@ -33,7 +34,7 @@ const PostCard = ({ title, size, showShort, post, isList, isFull }: PostCardProp
                         <h1 className="text-5xl font-bold">{post.title}</h1>
                     </Link>
                     <PostCategory categories={post.categories} />
-                    <p>{post.createdAt}</p>
+                    <p>{moment(new Date(post.createdAt)).format('DD/MM/YYYY')}</p>
                 </div>
                 <div className='flex flex-col gap-4'>
                     <p className='bg-slate-500 p-1 rounded-lg'>{post.shortText}</p>
@@ -55,8 +56,8 @@ const PostCard = ({ title, size, showShort, post, isList, isFull }: PostCardProp
     }
 
     return (
-        <div className={`${size === 'lg' ? 'w-1/2' : 'w-1/4'} pr-10 pb-10`} key={post.title}>
-            <div className="p-16 flex flex-col rounded-2xl bg-slate-800 justify-between h-80">
+        <div className={`w-full ${size === 'lg' ? 'xl:w-1/2' : 'xl:w-1/4'} xl:pr-10 pb-10`} key={post.title}>
+            <div className="p-16 flex flex-col rounded-2xl bg-slate-800 justify-between xl:h-80">
                 <div className='flex flex-col gap-2 justify-start'>
                     <PostTitle {...{ post, title }} />
                     <PostCategory categories={post.categories} />
