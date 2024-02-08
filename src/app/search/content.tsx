@@ -9,7 +9,6 @@ import PostList from "../components/postList.component";
 
 const SearchContent = () => {
 
-    const origin = window?.document.location.origin;
     const skip = 0;
     const searchParams = useSearchParams();
     const search = searchParams.get('q');
@@ -56,7 +55,7 @@ const SearchContent = () => {
         <div className='w-full flex flex-col gap-10'>
             <p>Resultado de: <b>{search}</b></p>
             <div className='w-full flex flex-col gap-10'>
-                <PostList postsList={postsList} list {...{origin}} />
+                <PostList postsList={postsList} list />
             </div>
         </div>
     )
