@@ -25,7 +25,8 @@ const Footer = () => {
                 </div>
             </div>
         </footer>
-        <div className="px-24 w-full py-4 flex justify-center">
+        <div className="px-24 w-full py-4 flex justify-between">
+            <a href="/politica-de-privacidade">Política de privacidade</a>
             <p>Feito em: Next, Tailwind CSS, GraphQL</p>
         </div>
         </>
