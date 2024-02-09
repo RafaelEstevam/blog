@@ -1,14 +1,14 @@
 import type { Metadata, ResolvingMetadata } from 'next'
 
 import {gql_client} from '../services';
-import {queryPost, queryAllPosts} from './query';
+import {queryPost} from './query';
 import PostComponent, { PostProps } from "./components/post.component";
 
-export async function generateStaticParams() {
-    const {posts}:any = await gql_client.request(queryAllPosts);
-    const postsSlug = posts.map((post:PostProps) => ({slug: post.slug}));
-    return postsSlug
-}
+// export async function generateStaticParams() {
+//     const {posts}:any = await gql_client.request(queryAllPosts);
+//     const postsSlug = posts.map((post:PostProps) => ({slug: post.slug}));
+//     return postsSlug
+// }
  
 export async function generateMetadata({ params }: any, parent: ResolvingMetadata): Promise<Metadata> {
     const {slug} = params;
