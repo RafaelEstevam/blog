@@ -23,7 +23,8 @@ const CategoryContent =  () => {
                     id
                     title
                     categories,
-                    slug
+                    slug,
+                    shortText
                 }
             }
         `;

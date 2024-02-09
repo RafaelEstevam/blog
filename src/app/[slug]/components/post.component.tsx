@@ -24,12 +24,13 @@ const PostComponent = (post:PostProps) => {
     const content = post.content;
     const image = post.gallery;
     const createdAt = post.createdAt;
-    const autor = post.createdBy.name
+    const autor = post.createdBy.name;
+    const categories = post.categories;
 
     return (
         <>
             <PostImage {...{image, title}} />
-            <PostTitle {...{title}}/>
+            <PostTitle {...{title, categories}}/>
             <PostDetails {...{createdAt, autor}} />
             <PostContent {...{content}}/>
             <PostShare {...post} />

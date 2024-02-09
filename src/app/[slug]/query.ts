@@ -1,6 +1,17 @@
 import { gql } from 'graphql-request';
 
-const query = gql`
+const queryAllPosts = gql`
+    query Posts{
+        posts{
+            id,
+            slug,
+            title,
+            shortText
+        }
+    }
+`;
+
+const queryPost = gql`
     query Posts($slug:String!) {
         post(where:{slug:$slug}){
             title,
@@ -15,12 +26,16 @@ const query = gql`
             categories,
             createdAt,
             updatedAt,
+            shortText,
             createdBy{
-                    id,
+                id,
                 name
             }
-            }
+        }
     }
 `;
 
-export default query;
+export {
+    queryPost,
+    queryAllPosts
+};
