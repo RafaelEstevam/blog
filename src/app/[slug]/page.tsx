@@ -3,9 +3,6 @@ import type { Metadata, ResolvingMetadata } from 'next'
 import {gql_client} from '../services';
 import {queryPost, queryAllPosts} from './query';
 import PostComponent, { PostProps } from "./components/post.component";
-// import Page404 from '../404';
-
-export const dynamic = 'force-dynamic'
 
 export async function generateStaticParams() {
     const {posts}:any = await gql_client.request(queryAllPosts);
