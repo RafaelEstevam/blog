@@ -8,7 +8,7 @@ const PostGallery = async ({skip = 1, first = 2}:any) => {
 
     const query = gql`
     query {
-            posts(skip: ${skip}, first: ${first}, orderBy: createdAt_DESC){
+            posts(where: {postType: post}, skip: ${skip}, first: ${first}, orderBy: createdAt_DESC){
                 title,
                 slug,
                 shortText,

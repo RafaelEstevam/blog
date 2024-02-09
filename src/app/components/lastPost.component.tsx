@@ -4,7 +4,7 @@ import PostCard from './postCard.component';
 
 const query = gql`
     query {
-        posts(last:1){
+        posts(where: {postType: post}, last:1){
         title,
         slug,
         shortText,
