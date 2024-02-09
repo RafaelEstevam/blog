@@ -9,7 +9,7 @@ const Page = async ({params}:any) => {
     const {slug} = params;
     const variables = { slug };
     const {posts}:any = await gql_client.request(query, variables);
-    const post:PostProps = posts[0]
+    const post:PostProps = posts[0];
 
     return posts[0] ? (
         <PostComponent {...post} />
