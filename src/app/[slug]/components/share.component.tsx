@@ -4,7 +4,10 @@ import { PostProps } from "./post.component";
 const PostShare = (post:PostProps) => {
     const {value}:any = cookies().get('origin');
     return (
-        <a href={`https://www.linkedin.com/shareArticle?mini=true&url=${value}/${post.slug}`}>Linkedin</a>
+        <div className='flex gap-4 justify-start w-full'>
+            <h4 className='font-bold'>Compartilhar em: </h4>
+            <a href={`https://www.linkedin.com/shareArticle?mini=true&url=${value}/${post.slug}`}>Linkedin</a>
+        </div>
     )
 };
 

@@ -2,7 +2,7 @@ import { gql } from 'graphql-request';
 
 const query = gql`
     query Posts($slug:String!) {
-        posts(where:{slug:$slug}){
+        post(where:{slug:$slug}){
             title,
             slug,
             content{

@@ -6,27 +6,27 @@ import PostComponent, { PostProps } from "./components/post.component";
 import Page404 from '../404';
  
 export async function generateMetadata({ params }: any, parent: ResolvingMetadata): Promise<Metadata> {
-  const {slug} = params;
-  const variables = { slug };
-  const {posts}:any = await gql_client.request(query, variables);
- 
-  return {
-    title: posts[0].title,
-    description: posts[0].shortText,
-    openGraph: {
-      images: [posts[0].gallery[0]?.url],
-    },
-  }
+    const {slug} = params;
+    const variables = { slug };
+    const post:PostProps = await gql_client.request(query, variables);
+    const gallery = post.gallery ? [post?.gallery[0]?.url] : undefined;
+    
+    return {
+        title: post.title,
+        description: post.shortText,
+        openGraph: {
+          images: gallery,
+        },
+    }
 }
 
 const Page = async ({params}:any) => {
 
     const {slug} = params;
     const variables = { slug };
-    const {posts}:any = await gql_client.request(query, variables);
-    const post:PostProps = posts[0];
+    const {post}:any = await gql_client.request(query, variables);
 
-    return posts[0] ? (
+    return post ? (
         <PostComponent {...post} />
     ) : (
         <Page404 />
