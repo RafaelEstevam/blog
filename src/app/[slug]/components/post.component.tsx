@@ -1,3 +1,6 @@
+import {gql_client} from '../../services';
+import {queryPost} from '../query';
+
 import PostContent from "./content.component";
 import PostDetails from "./details.component";
 import PostImage from "./image.component";
@@ -18,7 +21,20 @@ export interface PostProps {
     updatedAt: string,
 }
 
-const PostComponent = (post:PostProps) => {
+interface PostComponentProps{
+    slug: string
+}
+
+async function getData(variables:any) {
+    const {post}:any = await gql_client.request(queryPost, variables);
+    const item:PostProps = post
+    return item;
+}
+
+const PostComponent = async ({slug}:PostComponentProps) => {
+
+    const variables = { slug };
+    const post:any = await getData(variables);
     
     const title= post.title;
     const content = post.content;

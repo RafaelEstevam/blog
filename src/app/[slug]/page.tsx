@@ -3,7 +3,9 @@ import type { Metadata, ResolvingMetadata } from 'next'
 import {gql_client} from '../services';
 import {queryPost, queryAllPosts} from './query';
 import PostComponent, { PostProps } from "./components/post.component";
-import Page404 from '../404';
+// import Page404 from '../404';
+
+export const dynamic = 'force-dynamic'
 
 export async function generateStaticParams() {
     const {posts}:any = await gql_client.request(queryAllPosts);
@@ -27,17 +29,9 @@ export async function generateMetadata({ params }: any, parent: ResolvingMetadat
     }
 }
 
-const Page = async ({params}:any) => {
-
+const Page = ({params}:any) => {
     const {slug} = params;
-    const variables = { slug };
-    const {post}:any = await gql_client.request(queryPost, variables);
-
-    return post ? (
-        <PostComponent {...post} />
-    ) : (
-        <Page404 />
-    );
+    return (<PostComponent {...{slug}} />) 
 };
 
 export default Page
