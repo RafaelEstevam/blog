@@ -7,6 +7,8 @@ const gql_client = new GraphQLClient(HYGRAPH_URL, {
     headers: {
       Authorization: `Bearer ${HYGRAPH_PERMANENTAUTH_TOKEN}`,
     },
+    errorPolicy: 'ignore',
+    next:{revalidate: 10}
 });
 
 export {
