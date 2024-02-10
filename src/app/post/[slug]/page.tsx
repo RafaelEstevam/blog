@@ -33,7 +33,7 @@ const Page = async ({params}:any) => {
             <PostTitle {...{title, categories}}/>
             <PostDetails {...{createdAt, autor}} />
             <PostContent {...{content}}/>
-            <PostShare {...slug} />
+            <PostShare {...{slug}} />
         </>
     )
 };
