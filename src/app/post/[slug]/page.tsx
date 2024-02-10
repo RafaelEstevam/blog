@@ -1,12 +1,14 @@
-import { queryAllPosts } from "../../[slug]/query";
+import { queryPost } from "../../[slug]/query";
 import { gql_client } from "../../services";
 
-const Page = async () => {
+const Page = async ({params}:any) => {
 
-    const {post}:any = await gql_client.request(queryAllPosts);
+    const {slug} = params;
+    const variables = {slug}
+    const {post}:any = await gql_client.request(queryPost, variables);
 
     return (
-        <>teste</>
+        <>{post.title}</>
     )
 };
 
