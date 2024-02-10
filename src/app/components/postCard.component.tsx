@@ -17,9 +17,9 @@ const PostTitle = ({ title, post }: PostCardProps) => {
     return (
         <Link href={`${origin}/${post.slug}`}>
             {title === 'H2' ? (
-                <h2 className="text-3xl xl:text-5xl font-bold">{post.title}</h2>
+                <h2 className="text-3xl xl:text-5xl font-bold text-white">{post.title}</h2>
             ) : (
-                <h3 className="text-3xl xl:text-4xl font-bold">{post.title}</h3>
+                <h3 className="text-3xl xl:text-4xl font-bold text-white">{post.title}</h3>
             )}
         </Link>
     )
@@ -31,14 +31,14 @@ const PostCard = ({ title, size, showShort, post, isList, isFull }: PostCardProp
             <div className="w-full p-16 rounded-2xl bg-slate-700 flex flex-col justify-between min-h-96 gap-4 xl:gap-0 shadow-2xl">
                 <div className='flex flex-col gap-2 justify-start'>
                     <Link href={post.slug}>
-                        <h1 className="text-5xl font-bold">{post.title}</h1>
+                        <h1 className="text-5xl font-bold text-white">{post.title}</h1>
                     </Link>
                     <PostCategory categories={post.categories} />
-                    <p>{moment(new Date(post.createdAt)).format('DD/MM/YYYY')}</p>
+                    <p className="text-white">{moment(new Date(post.createdAt)).format('DD/MM/YYYY')}</p>
                 </div>
                 <div className='flex flex-col gap-4'>
-                    <p className='bg-slate-500 py-1 px-2 rounded-lg'>{post.shortText}</p>
-                    <p className='text-center'>por <strong>{post.createdBy.name}</strong></p>
+                    <p className='bg-slate-500 py-1 px-2 rounded-lg text-white'>{post.shortText}</p>
+                    <p className='text-center text-white'>por <strong>{post.createdBy.name}</strong></p>
                 </div>
             </div>
         )

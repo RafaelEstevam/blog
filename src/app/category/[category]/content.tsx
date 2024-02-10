@@ -41,7 +41,7 @@ const CategoryContent =  () => {
         <h3>Carregando...</h3>
     ) : (
         <div className='w-full flex flex-col gap-10'>
-            <p>Categoria <b>{category}</b></p>
+            <p className="text-white">Categoria <b>{category}</b></p>
             <div className='w-full flex flex-col gap-10'>
                 <PostList postsList={posts} list />
             </div>

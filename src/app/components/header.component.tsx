@@ -10,7 +10,7 @@ const Header = async () => {
             </div>
             <div className="flex justify-center text-center py-4 absolute inset-x-0">
                 <a href={'/'}>
-                    <h1 className="font-bold text-4xl">R&O</h1>
+                    <h1 className="font-bold text-4xl text-white">R&O</h1>
                 </a>
             </div>
             <div className="relative z-10 hidden xl:block">

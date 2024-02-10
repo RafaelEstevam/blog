@@ -40,11 +40,11 @@ const NavComponent = () => {
                     <button className="xs:block xl:hidden bg-white p-4 uppercase rounded-xl text-black font-bold" onClick={() => setShowMenu(false)}>Fechar</button>
                 </div>
                 <ul className="flex gap-10 flex-col xl:flex-row items-start xl:items-center">
-                    <li><a href={'/category/frontend'} className="block xl:py-10">Front-end</a></li>
-                    <li><a href={'/category/react'} className="block xl:py-10">React</a></li>
-                    <li><a href={'/category/javascript'} className="block xl:py-10">Javascript</a></li>
-                    <li><a href={'/category/css'} className="block xl:py-10">CSS</a></li>
-                    <li><a href={'/category/html'} className="block xl:py-10">HTML</a></li>
+                    <li><a href={'/category/frontend'} className="block xl:py-10 text-white">Front-end</a></li>
+                    <li><a href={'/category/react'} className="block xl:py-10 text-white">React</a></li>
+                    <li><a href={'/category/javascript'} className="block xl:py-10 text-white">Javascript</a></li>
+                    <li><a href={'/category/css'} className="block xl:py-10 text-white">CSS</a></li>
+                    <li><a href={'/category/html'} className="block xl:py-10 text-white">HTML</a></li>
                 </ul>
                 <div className="block xl:hidden">
                     <SearchComponent />

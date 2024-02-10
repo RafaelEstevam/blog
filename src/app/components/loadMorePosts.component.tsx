@@ -45,7 +45,7 @@ const LoadMorePosts = () => {
         <>
             <PostList postsList={postsList} />
             {loading ? (
-                <p>Carregando...</p>
+                <p className="text-white">Carregando...</p>
             ) : (
                 <button 
                     className={`
