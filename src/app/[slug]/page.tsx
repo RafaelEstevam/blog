@@ -28,7 +28,10 @@ export async function generateMetadata({ params }: any, parent: ResolvingMetadat
 
 const Page = async ({params}:any) => {
     const {slug} = params;
-    return (<PostComponent {...{slug}} />) 
+    return (
+        <></>
+        // <PostComponent {...{slug}} />
+    ) 
 };
 
 export default Page
