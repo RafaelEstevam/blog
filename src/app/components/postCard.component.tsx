@@ -63,7 +63,7 @@ const PostCard = ({ title, size, showShort, post, isList, isFull }: PostCardProp
                     <PostTitle {...{ post, title }} />
                     <PostCategory categories={post.categories} />
                 </div>
-                {showShort && <p>{post?.shortText}</p>}
+                {showShort && <p className='text-white'>{post?.shortText}</p>}
             </div>
         </div>
     )
