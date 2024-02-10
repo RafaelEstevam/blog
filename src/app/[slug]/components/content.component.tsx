@@ -1,5 +1,5 @@
 
-const PostContent = ({content}:any) => {
+const PostContent = async ({content}:any) => {
     return (
         <div
             className={`
