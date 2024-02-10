@@ -45,11 +45,11 @@ const PostComponent = async ({slug}:PostComponentProps) => {
 
     return (
         <>
-            <PostImage {...{image, title}} />
+            {/* <PostImage {...{image, title}} /> */}
             <PostTitle {...{title, categories}}/>
-            <PostDetails {...{createdAt, autor}} />
-            <PostContent {...{content}}/>
-            <PostShare {...post} />
+            {/* <PostDetails {...{createdAt, autor}} /> */}
+            {/* <PostContent {...{content}}/> */}
+            {/* <PostShare {...post} /> */}
         </>
     )
 };
