@@ -29,11 +29,11 @@ const Page = async ({params}:any) => {
 
     return (
         <>
-            {/* <PostImage {...{image, title}} /> */}
+            <PostImage {...{image, title}} />
             <PostTitle {...{title, categories}}/>
             <PostDetails {...{createdAt, autor}} />
             <PostContent {...{content}}/>
-            <PostShare {...post} />
+            <PostShare {...slug} />
         </>
     )
 };
