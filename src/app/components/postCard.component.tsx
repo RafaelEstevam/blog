@@ -50,7 +50,7 @@ const PostCard = ({ title, size, showShort, post, isList, isFull }: PostCardProp
                 <div className="p-8 flex flex-col rounded-2xl bg-slate-700 justify-between">
                     <PostTitle {...{ post, title }} />
                     <PostCategory categories={post.categories} />
-                    <p className='mt-4'>{post?.shortText}</p>
+                    <p className='mt-4 text-white'>{post?.shortText}</p>
                 </div>
             </div>
         )
