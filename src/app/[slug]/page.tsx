@@ -40,7 +40,7 @@ const Page = async ({params}:any) => {
     const title= post.title;
     const content = post.content;
     const image = post.gallery;
-    const createdAt = post.createdAt;
+    const createdAt = post.updatedAt;
     const autor = post.createdBy.name;
     const categories = post.categories;
 
