@@ -20,6 +20,17 @@ export default function RootLayout({
     <html lang="en">
       <meta name="google-adsense-account" content="ca-pub-2040517232009371"></meta>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2040517232009371" crossOrigin="anonymous"></script>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-N24CHGYB0M"></script>
+      <script>
+       {`
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+ 
+         gtag('config', 'G-N24CHGYB0M');
+       `}
+      </script>
+      
       <body className={inter.className}>{children}</body>
     </html>
   );

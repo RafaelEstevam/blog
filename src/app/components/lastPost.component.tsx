@@ -8,8 +8,12 @@ const query = gql`
         title,
         slug,
         shortText,
+        content{
+            html
+        },
         categories,
         createdAt,
+        updatedAt,
         createdBy{
                 id,
                 name

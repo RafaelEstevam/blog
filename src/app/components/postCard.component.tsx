@@ -2,6 +2,7 @@ import Link from 'next/link';
 import PostCategory from './postCategory.component';
 import { PostProps } from '../[slug]/components/post.component';
 import moment from 'moment';
+import PostContent from '../[slug]/components/content.component';
 
 interface PostCardProps {
     post: PostProps,
