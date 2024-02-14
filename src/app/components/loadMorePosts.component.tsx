@@ -7,7 +7,7 @@ import PostList from './postList.component';
 
 const LoadMorePosts = () => {
 
-    const skip = 3;
+    const skip = 4;
 
     const [page, setPage] = useState(skip);
     const [postsList, setPosts] = useState<any[]>([]);
@@ -24,7 +24,7 @@ const LoadMorePosts = () => {
                     title,
                     slug,
                     shortText,
-                    categories,
+                    categories
                 }
             }
         `;
@@ -36,7 +36,7 @@ const LoadMorePosts = () => {
         }
 
         setPosts(posts);
-        setPage(page + 2);
+        setPage(page + 3);
         setLoading(false);
 
     }, [page, postsList]);

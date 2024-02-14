@@ -28,19 +28,41 @@ const PostTitle = ({ title, post }: PostCardProps) => {
 
 const PostCard = ({ title, size, showShort, post, isList, isFull }: PostCardProps) => {
     if (isFull) {
+
         return (
-            <div className="w-full p-16 rounded-2xl bg-slate-700 flex flex-col justify-between min-h-96 gap-4 xl:gap-0 shadow-2xl">
-                <div className='flex flex-col gap-2 justify-start'>
-                    <Link href={post.slug}>
-                        <h1 className="text-5xl font-bold text-white">{post.title}</h1>
-                    </Link>
-                    <PostCategory categories={post.categories} />
-                    <p className="text-white">{moment(new Date(post.createdAt)).format('DD/MM/YYYY')}</p>
+            <div className={`
+                relative
+                w-full
+                overflow-hidden
+                rounded-2xl 
+                bg-slate-700
+                shadow-2xl
+            `}>
+                <div className="
+                    w-full
+                    h-full
+                    min-h-96
+                    p-16
+                    flex 
+                    flex-col 
+                    justify-between
+                    gap-4
+                    relative
+                ">
+                    <div className='flex flex-col gap-2 justify-start z-20'>
+                        <Link href={post.slug}>
+                            <h1 className="text-5xl font-bold text-white">{post.title}</h1>
+                        </Link>
+                        <PostCategory categories={post.categories} />
+                        <p className="text-white">{moment(new Date(post.createdAt)).format('DD/MM/YYYY')}</p>
+                    </div>
+                    <div className='flex flex-col gap-4 z-20'>
+                        <p className='bg-slate-500 py-1 px-2 rounded-lg text-white'>{post.shortText}</p>
+                        <p className='text-center text-white'>por <strong>{post.createdBy.name}</strong></p>
+                    </div>
                 </div>
-                <div className='flex flex-col gap-4'>
-                    <p className='bg-slate-500 py-1 px-2 rounded-lg text-white'>{post.shortText}</p>
-                    <p className='text-center text-white'>por <strong>{post.createdBy.name}</strong></p>
-                </div>
+                <div className='hidden opacity-90 absolute top-0 z-10 bg-black min-h-full w-full lg:block lg:w-full lg:h-auto'></div>
+                <img src={`${post.gallery[0].url}`} className='hidden w-fit absolute top-0 grayscale lg:block lg:w-full lg:h-auto' />
             </div>
         )
     }

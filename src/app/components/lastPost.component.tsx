@@ -5,16 +5,20 @@ import PostCard from './postCard.component';
 const query = gql`
     query {
         posts(where: {postType: post}, last:1){
-        title,
-        slug,
-        shortText,
-        content{
-            html
-        },
-        categories,
-        createdAt,
-        updatedAt,
-        createdBy{
+            title,
+            slug,
+            shortText,
+            content{
+                html
+            },
+            gallery{
+                id,
+                url
+            },
+            categories,
+            createdAt,
+            updatedAt,
+            createdBy{
                 id,
                 name
             }
