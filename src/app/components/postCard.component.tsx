@@ -18,9 +18,9 @@ const PostTitle = ({ title, post }: PostCardProps) => {
     return (
         <Link href={`${origin}/${post.slug}`}>
             {title === 'H2' ? (
-                <h2 className="text-3xl xl:text-5xl font-bold text-white">{post.title}</h2>
+                <h2 className="text-3xl xl:text-5xl font-bold text-white hover:underline">{post.title}</h2>
             ) : (
-                <h3 className="text-3xl xl:text-4xl font-bold text-white">{post.title}</h3>
+                <h3 className="text-3xl xl:text-4xl font-bold text-white hover:underline">{post.title}</h3>
             )}
         </Link>
     )
@@ -51,7 +51,7 @@ const PostCard = ({ title, size, showShort, post, isList, isFull }: PostCardProp
                 ">
                     <div className='flex flex-col gap-2 justify-start z-20'>
                         <Link href={post.slug}>
-                            <h1 className="text-5xl font-bold text-white">{post.title}</h1>
+                            <h1 className="text-5xl font-bold text-white hover:underline">{post.title}</h1>
                         </Link>
                         <PostCategory categories={post.categories} />
                         <p className="text-white">{moment(new Date(post.createdAt)).format('DD/MM/YYYY')}</p>

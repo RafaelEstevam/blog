@@ -11,7 +11,7 @@ const SearchComponent = () => {
     const handleSubmit = useCallback((e: any) => {
         e.preventDefault()
         const url = window.document.location.origin
-        router.push(`${url}/search/?q=${term}`);
+        router.push(`${url}/search/?q=${term.toLowerCase()}`);
     }, [term]);
 
     return (

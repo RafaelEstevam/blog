@@ -67,6 +67,12 @@ body {
       gap: 16px;
       list-style: disc;
     }
+    a{
+      color: #2563eb;
+    }
+    a:hover{
+      text-decoration: underline;
+    }
 
   }
   /* ... */
