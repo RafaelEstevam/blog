@@ -4,7 +4,7 @@ import SearchComponent from "./search.component";
 const Header = async () => {
 
     return (
-        <header className="w-full rounded-b-2xl flex justify-between items-center gap-32 relative">
+        <header className="w-full rounded-b-2xl flex justify-between items-center gap-32 relative z-10">
             <div className="relative z-10">
                 <NavComponent />
             </div>

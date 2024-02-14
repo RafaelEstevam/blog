@@ -49,14 +49,14 @@ const PostCard = ({ title, size, showShort, post, isList, isFull }: PostCardProp
                     gap-4
                     relative
                 ">
-                    <div className='flex flex-col gap-2 justify-start z-20'>
+                    <div className='flex flex-col gap-2 justify-start'>
                         <Link href={post.slug}>
                             <h1 className="text-5xl font-bold text-white hover:underline">{post.title}</h1>
                         </Link>
                         <PostCategory categories={post.categories} />
                         <p className="text-white">{moment(new Date(post.createdAt)).format('DD/MM/YYYY')}</p>
                     </div>
-                    <div className='flex flex-col gap-4 z-20'>
+                    <div className='flex flex-col gap-4'>
                         <p className='bg-slate-500 py-1 px-2 rounded-lg text-white'>{post.shortText}</p>
                         <p className='text-center text-white'>por <strong>{post.createdBy.name}</strong></p>
                     </div>
