@@ -11,10 +11,6 @@ const query = gql`
             content{
                 html
             },
-            gallery{
-                id,
-                url
-            },
             categories,
             createdAt,
             updatedAt,

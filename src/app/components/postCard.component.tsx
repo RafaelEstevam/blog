@@ -61,8 +61,8 @@ const PostCard = ({ title, size, showShort, post, isList, isFull }: PostCardProp
                         <p className='text-center text-white'>por <strong>{post.createdBy.name}</strong></p>
                     </div>
                 </div>
-                <div className='hidden opacity-90 absolute top-0 z-10 bg-black min-h-full w-full lg:block lg:w-full lg:h-auto'></div>
-                <img src={`${post.gallery[0].url}`} className='hidden w-fit absolute top-0 grayscale lg:block lg:w-full lg:h-auto' />
+                {/* <div className='hidden opacity-90 absolute top-0 z-10 bg-black min-h-full w-full lg:block lg:w-full lg:h-auto'></div>
+                <img src={`${post?.gallery[0].url}`} className='hidden w-fit absolute top-0 grayscale lg:block lg:w-full lg:h-auto' /> */}
             </div>
         )
     }
