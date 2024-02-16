@@ -26,7 +26,7 @@ const PostTitle = ({ title, post, isList }: PostCardProps) => {
 
 const PostCardV2 = ({ title, size, showShort, post, isList}: PostCardProps) => {
     return (
-        <div className={`w-full ${size === 'lg' && 'xl:col-span-2'} ${isList && 'xl:col-span-1'}`} key={post.title}>
+        <div className={`w-full ${size === 'lg' && !isList && 'xl:col-span-2'} ${isList && 'xl:col-span-1'}`} key={post.title}>
             <div className="p-16 flex flex-col rounded-2xl bg-slate-700 justify-between xl:h-80 gap-6">
                 <div className='flex flex-col gap-2 justify-start'>
                     <PostTitle {...{ post, title, isList }} />
