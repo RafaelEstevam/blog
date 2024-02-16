@@ -81,7 +81,7 @@ const PostCard = ({ title, size, showShort, post, isList, isFull }: PostCardProp
 
     return (
         <div className={`w-full ${size === 'lg' ? 'xl:w-1/2' : 'xl:w-1/4'} xl:pr-10 pb-10`} key={post.title}>
-            <div className="p-16 flex flex-col rounded-2xl bg-slate-700 justify-between xl:h-80">
+            <div className={`p-16 flex flex-col rounded-2xl bg-slate-700 justify-between`}>
                 <div className='flex flex-col gap-2 justify-start'>
                     <PostTitle {...{ post, title }} />
                     <PostCategory categories={post.categories} />
