@@ -2,7 +2,7 @@
 
 import { gql } from 'graphql-request';
 import {gql_client} from '../../services';
-import PostList from '../../components/postList.component';
+import PostList from '../../components/postList/postList.component';
 import { useEffect, useState } from 'react';
 import { useParams } from 'next/navigation';
 
@@ -20,11 +20,19 @@ const CategoryContent =  () => {
                     where: {categories_contains_some: ${category}}
                     orderBy: createdAt_DESC
                 ) {
-                    id
-                    title
-                    categories,
+                    title,
                     slug,
-                    shortText
+                    shortText,
+                    content{
+                        html
+                    },
+                    categories,
+                    createdAt,
+                    updatedAt,
+                    createdBy{
+                        id,
+                        name
+                    }
                 }
             }
         `;
@@ -43,7 +51,7 @@ const CategoryContent =  () => {
         <div className='w-full flex flex-col gap-10'>
             <p className="text-white">Categoria <b>{category}</b></p>
             <div className='w-full flex flex-col gap-10'>
-                <PostList postsList={posts} list />
+                <PostList postsList={posts} isList heading='H2' showShort/>
             </div>
         </div>
     )

@@ -1,19 +1,26 @@
 import { gql } from 'graphql-request';
 import {gql_client} from '../services';
-import LoadMorePosts from './loadMorePosts.component';
-import PostList from './postList.component';
-import PostListV2 from './postList.v2.component';
+import PostList from './postList/postList.component';
 
 
-const PostGallery = async ({skip = 1, first = 2}:any) => {
+const PostGallery = async () => {
 
     const query = gql`
     query {
-            posts(where: {postType: post}, skip: ${skip}, first: ${first}, orderBy: createdAt_DESC){
+            posts(where: {postType: post}, orderBy: createdAt_DESC){
                 title,
                 slug,
                 shortText,
+                content{
+                    html
+                },
                 categories,
+                createdAt,
+                updatedAt,
+                createdBy{
+                    id,
+                    name
+                }
             }
         }
     `;
@@ -22,8 +29,7 @@ const PostGallery = async ({skip = 1, first = 2}:any) => {
 
     return (
         <div className="w-full flex flex-wrap gap-10">
-            <PostListV2 postsList={posts} />
-            <LoadMorePosts />
+            <PostList postsList={posts} heading='H2' />
         </div>
     )
 };

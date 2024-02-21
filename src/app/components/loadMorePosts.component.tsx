@@ -3,8 +3,9 @@
 import {useCallback, useState} from 'react';
 import { gql } from 'graphql-request';
 import {gql_client} from '../services';
-import PostList from './postList.component';
-import PostListV2 from './postList.v2.component';
+import PostList from './postList/postList.component';
+// import PostList from './postList.component';
+// import PostListV2 from './postList.v2.component';
 
 const LoadMorePosts = () => {
 
@@ -44,7 +45,7 @@ const LoadMorePosts = () => {
 
     return (
         <>
-            {postsList.length > 0 && <PostListV2 postsList={postsList} list />}
+            {postsList.length > 0 && <PostList postsList={postsList} heading='H2' />}
             {loading ? (
                 <p className="text-white">Carregando...</p>
             ) : (

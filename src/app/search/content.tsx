@@ -5,7 +5,7 @@ import {useCallback, useEffect, useState} from 'react';
 import { gql } from 'graphql-request';
 import {gql_client} from '../services';
 
-import PostList from "../components/postList.component";
+import PostList from '../components/postList/postList.component';
 
 const SearchContent = () => {
 
@@ -28,7 +28,16 @@ const SearchContent = () => {
                     title,
                     slug,
                     shortText,
+                    content{
+                        html
+                    },
                     categories,
+                    createdAt,
+                    updatedAt,
+                    createdBy{
+                        id,
+                        name
+                    }
                 }
             }`;
 
@@ -50,7 +59,7 @@ const SearchContent = () => {
         <div className='w-full flex flex-col gap-10'>
             <p className="text-white">Resultado de: <b>{search}</b></p>
             <div className='w-full flex flex-col gap-10'>
-                <PostList postsList={postsList} list />
+                <PostList postsList={postsList} isList heading='H2' showShort/>
             </div>
         </div>
     )
