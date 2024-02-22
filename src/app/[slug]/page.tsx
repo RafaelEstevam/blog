@@ -1,3 +1,4 @@
+
 import { PostProps } from "./components/post.component";
 import { queryAllPosts, queryPost } from "./query";
 import { gql_client } from "../services";
@@ -7,6 +8,8 @@ import PostImage from "./components/image.component";
 import PostDetails from "./components/details.component";
 import PostContent from "./components/content.component";
 import PostShare from "./components/share.component";
+import Widget from "./micro";
+
 import { Metadata, ResolvingMetadata } from "next";
 
 export async function generateStaticParams() {
@@ -51,6 +54,7 @@ const Page = async ({params}:any) => {
             <PostDetails {...{createdAt, autor}} />
             <PostContent {...{content}}/>
             <PostShare {...{slug}} />
+            <Widget/>
         </>
     )
 };
