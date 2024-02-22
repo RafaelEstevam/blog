@@ -125,14 +125,16 @@ e experiências, contribuindo para o crescimento profissional e auxiliando no at
                                 <p>Tailwind</p>
                             </div>
                             <div className="p-5 flex justify-center bg-slate-700 rounded-2xl">
+                                <p>Styled Components</p>
+                            </div>
+                            <div className="p-5 flex justify-center bg-slate-700 rounded-2xl">
                                 <p>Typescript</p>
                             </div>
+                        </div>
+                        <div className="flex flex-col md:grid md:grid-cols-6 gap-4">
                             <div className="p-5 flex justify-center bg-slate-700 rounded-2xl">
                                 <p>Material UI</p>
                             </div>
-                            
-                        </div>
-                        <div className="flex flex-col md:grid md:grid-cols-6 gap-4">
                             <div className="p-5 flex justify-center bg-slate-700 rounded-2xl">
                                 <p>Bootstrap</p>
                             </div>
@@ -148,11 +150,12 @@ e experiências, contribuindo para o crescimento profissional e auxiliando no at
                             <div className="p-5 flex justify-center bg-slate-700 rounded-2xl">
                                 <p>GraphQL</p>
                             </div>
+                            
+                        </div>
+                        <div className="flex flex-col md:grid md:grid-cols-7 gap-4">
                             <div className="p-5 flex justify-center bg-slate-700 rounded-2xl">
                                 <p>MySQL</p>
                             </div>
-                        </div>
-                        <div className="flex flex-col md:grid md:grid-cols-7 gap-4">
                             <div className="p-5 flex justify-center bg-slate-700 rounded-2xl">
                                 <p>PostgreSQL</p>
                             </div>
