@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
 import Script from 'next/script'
-import { Inter } from "next/font/google";
+import { Inter as FontSans } from "next/font/google"
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
+import { cn } from "@/lib/utils"
 
-const inter = Inter({ subsets: ["latin"] });
+export const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
 
 export const metadata: Metadata = {
   title: "Rafael Estevam",
@@ -37,7 +41,11 @@ export default function RootLayout({
           `}
         </Script>
       
-      <body className="bg-gradient-to-b from-slate-800 to-neutral-900">
+      {/* <body className="bg-gradient-to-b from-slate-800 to-neutral-900"> */}
+      <body className={cn(
+          "bg-gradient-to-b dark:from-slate-800 dark:to-neutral-900",
+          fontSans.variable
+        )}>
         <ThemeProvider
             attribute="class"
             defaultTheme="dark"
