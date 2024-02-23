@@ -1,21 +1,22 @@
-import { Suspense } from "react";
-import Footer from "./components/footer.component";
-import Header from "./components/header.component";
-import Loading from "./components/loading.component";
+"use client"
 
-const Page = ({children}: any) => {
-    return (
-        <div className="w-full">
-            <div className="w-full px-10 xl:px-24 flex flex-col items-center justify-start gap-10 pb-24">
-                <Header />
-                <main className="w-full flex flex-col items-center justify-start gap-10">
-                    <Suspense fallback={<Loading/>}>
-                        {children}
-                    </Suspense>
-                </main>
-            </div>
-            <Footer/>
-        </div>
+import { usePathname } from 'next/navigation'
+import { ReactNode,} from "react";
+import DefaultLayout from './layouts/default.layout';
+import AdminLayout from './layouts/admin.layout';
+
+interface TemplateProps {
+    children: ReactNode
+}
+
+const Page = ({children}: TemplateProps) => {
+
+    const isAdmin = usePathname().includes('restrict')
+
+    return !isAdmin ?(
+        <DefaultLayout>{children}</DefaultLayout>
+    ):(
+        <AdminLayout>{children}</AdminLayout>
     )
 };
 

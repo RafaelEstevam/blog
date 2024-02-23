@@ -1,9 +1,15 @@
+import { ThemeProvider } from "@/components/theme-provider"
+
 import type { Metadata } from "next";
 import Script from 'next/script'
-import { Inter } from "next/font/google";
+import { Inter as FontSans } from "next/font/google"
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+
+export const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
 
 export const metadata: Metadata = {
   title: "Rafael Estevam",
@@ -17,6 +23,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <meta name="google-adsense-account" content="ca-pub-2040517232009371"></meta>
@@ -36,7 +43,16 @@ export default function RootLayout({
           `}
         </Script>
       
-      <body className={inter.className}>{children}</body>
+      <body className='bg-gradient-to-b dark:from-slate-800 dark:to-neutral-900 from-slate-100 to-neutral-200'>
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </body>
     </html>
   );
 }

@@ -3,6 +3,8 @@
 import { useRouter } from 'next/navigation';
 import { useCallback, useState } from 'react';
 
+import { Button } from '@/components/ui/button';
+
 const SearchComponent = () => {
 
     const router = useRouter();
@@ -15,9 +17,12 @@ const SearchComponent = () => {
     }, [term]);
 
     return (
-        <form onSubmit={(e) => handleSubmit(e)}>
-            <input placeholder='Buscar post' className="bg-slate-600 rounded-2xl text-white w-full p-4" value={term} onChange={(e) => setTerm(e.target.value)} />
-        </form>
+        <div className='flex gap-4'>
+            <form onSubmit={(e) => handleSubmit(e)}>
+                <input placeholder='Buscar post' className="bg-slate-600 rounded-2xl text-white w-full p-4" value={term} onChange={(e) => setTerm(e.target.value)} />
+            </form>
+        </div>
+        
     )
 };
 
