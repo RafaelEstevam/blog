@@ -2,6 +2,7 @@ import Link from 'next/link';
 import PostCategory from '../postCategory.component';
 import { PostProps } from '../../[slug]/components/post.component';
 import moment from 'moment';
+import Title from '../title/title.component';
 
 interface PostCardProps {
     post: PostProps,
@@ -24,13 +25,13 @@ const PostTitle = ({ heading, slug, title}: PostTitleProps) => {
     return (
         <Link href={`/${slug}`}>
             {heading === 'H1' && (
-                <h1 className="text-4xl lg:text-5xl font-bold text-white hover:underline">{title}</h1>
+                <Title title={title} heading='H1' variant='link' />
             )}
             {heading === 'H2' && (
-                <h2 className="text-3xl lg:text-4xl font-bold text-white hover:underline">{title}</h2>
+                <Title title={title} heading='H2' variant='link'/>
             )}
             {heading === 'H3' && (
-                <h3 className="text-3xl lg:text-3xl font-bold text-white hover:underline">{title}</h3>
+                <Title title={title} heading='H3' variant='link'/>
             )}
         </Link>
     )
