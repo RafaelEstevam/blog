@@ -6,8 +6,6 @@ const Page = () => {
         <div className="w-full min-h-screen flex justify-center gap-10 px-10">
             <div className="w-2/3 px-8 flex flex-col gap-10 items-center">
 
-                <Components.Icon icon="Icons.AccessibilityIcon"/>
-
                 <Components.Title title="UIKit" heading="H1"/>
 
                 <div className="w-full">
