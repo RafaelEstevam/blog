@@ -9,8 +9,7 @@ export interface IconProps {
 const Icon = ({icon}:IconProps) => {
 
     const is:any = Icons;
-    const i = icon.split('.')[1];
-    const Comp:any = i && is[i];
+    const Comp:any = icon && is[icon];
 
     return (
         <Comp/>

@@ -34,7 +34,7 @@ export const Primary: Story = {
         variant: "outlined",
         color: "primary",
         showIcon: true,
-        icon: 'Icons.AccessibilityIcon'
+        icon: 'AccessibilityIcon'
     },
 };
 
