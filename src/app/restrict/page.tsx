@@ -1,5 +1,5 @@
 export default function Page(){
     return (
-        <>Página restrita</>
+        <div className="bg-yellow-800">Página restrita</div>
     )
 }

@@ -74,3 +74,51 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .content {
+
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    color: #fff;
+
+    h2{
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    h3{
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    h4, h5, h6{
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+
+    ul{
+      padding-left: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      list-style: disc;
+    }
+    a{
+      color: #2563eb;
+    }
+    a:hover{
+      text-decoration: underline;
+    }
+
+    blockquote{
+      background-color: #854d0e;
+      padding: 2rem;
+      border-radius: 1rem;
+    }
+
+  }
+  /* ... */
+}
