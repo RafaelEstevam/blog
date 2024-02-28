@@ -17,6 +17,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  console.log(process.env.NEXT_PUBLIC_GA);
+
   return (
     <html lang="en">
       <meta name="google-adsense-account" content="ca-pub-2040517232009371"></meta>
@@ -25,15 +28,16 @@ export default function RootLayout({
 
       <Script
         async
-        src="https://www.googletagmanager.com/gtag/js?id=G-N24CHGYB0M"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA}`}
       />
+            {/* gtag('config', ${process.env.NEXT_PUBLIC_GA}'G-N24CHGYB0M'); */}
 
       <Script id="google-analytics">
         {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-N24CHGYB0M');
+            gtag('config', ${process.env.NEXT_PUBLIC_GA});
         `}
       </Script>
       
