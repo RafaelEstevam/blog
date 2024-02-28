@@ -1,6 +1,7 @@
 import * as React from "react";
 import { cn } from "../../../lib/utils";
 import { cva } from "class-variance-authority"
+import { InputProps } from "../input/input.component";
 
 const titleVariants = cva(
     "p-4 transition-all duration-150 linear w-full",
@@ -23,7 +24,6 @@ const titleVariants = cva(
                 lg: 'p-4 rounded-lg text-lg',
                 xl: 'p-5 rounded-2xl text-xl',
             },
-
             disabled: {
                 true: 'text-neutral-800 bg-[#00000030]'
             }
@@ -39,18 +39,13 @@ const titleVariants = cva(
     }
 )
 
-export interface InputProps {
-    size: 'xs' | 'sm' | 'md' | 'lg' | 'xl',
-    variant?: 'outlined' | 'filled',
-    color?: 'primary' | 'secondary' | 'danger' | 'neutral',
-    placeholder?: string,
-    disabled?: boolean,
-    required?: boolean
+export interface TextareaProps extends InputProps {
+    value?: string,
 }
 
-const Input = ({size, variant, color, placeholder, disabled, required, ...props}:InputProps) => {
+const Textarea = ({size, variant, color, placeholder, value, disabled, required, ...props}:TextareaProps) => {
 
-    const Comp = "input";
+    const Comp = "textarea";
 
     return (
         <Comp
@@ -58,10 +53,12 @@ const Input = ({size, variant, color, placeholder, disabled, required, ...props}
             className={cn(titleVariants({ size, variant, color, disabled }))}
             {...props}
             {...{disabled, required}}
-        />
+        >
+            {value}
+        </Comp>
     );
 }
 
-Input.displayName = "Input";
+Textarea.displayName = "Textarea";
 
-export default Input;
+export default Textarea;
