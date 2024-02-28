@@ -3,7 +3,7 @@ import { cn } from "../../../lib/utils";
 import { cva } from "class-variance-authority"
 import { InputProps } from "../input/input.component";
 
-const titleVariants = cva(
+const selectVariants = cva(
     "p-4 transition-all duration-150 linear w-full",
     {
         variants: {
@@ -27,9 +27,6 @@ const titleVariants = cva(
             disabled: {
                 true: 'text-neutral-800 bg-[#00000030]'
             }
-            // fullScreen: {
-            //     true: 'w-full'
-            // },
         },
         
         defaultVariants: {
@@ -37,24 +34,35 @@ const titleVariants = cva(
             variant: "outlined",
         },
     }
-)
+);
 
-const Textarea = ({size, variant, color, placeholder, value, disabled, required, ...props}:InputProps) => {
+interface OptionProps{
+    value: string,
+    label: string,
+}
 
-    const Comp = "textarea";
+export interface SelectProps extends InputProps {
+    options?: OptionProps[]
+}
+
+const Select = ({size, variant, color, placeholder, value, disabled, required, options, ...props}:SelectProps) => {
+
+    const Comp = "select";
 
     return (
         <Comp
-            placeholder={placeholder}
-            className={cn(titleVariants({ size, variant, color, disabled }))}
+            className={cn(selectVariants({ size, variant, color, disabled }))}
             {...props}
             {...{disabled, required}}
         >
-            {value}
+            <option className="text-slate-700" value="">Selecione uma opção...</option>
+            {options?.map((option) => (
+                <option className="text-slate-700" value={option.value}>{option.label}</option>
+            ))}
         </Comp>
     );
 }
 
-Textarea.displayName = "Textarea";
+Select.displayName = "Select";
 
-export default Textarea;
+export default Select;

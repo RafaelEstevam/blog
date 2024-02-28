@@ -28,6 +28,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
     args: {
+        id: 'button',
+        type: 'button',
         label: "Button",
         size: "md",
         fullScreen: false,
@@ -40,6 +42,8 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
     args: {
+        id: 'button',
+        type: 'button',
         label: "Button",
         size: "md",
         fullScreen: false,
@@ -50,6 +54,8 @@ export const Secondary: Story = {
 
 export const Danger: Story = {
     args: {
+        id: 'button',
+        type: 'button',
         label: "Button",
         size: "md",
         fullScreen: false,
@@ -60,6 +66,8 @@ export const Danger: Story = {
 
 export const Neutral: Story = {
     args: {
+        id: 'button',
+        type: 'button',
         label: "Button",
         size: "md",
         fullScreen: false,

@@ -3,7 +3,7 @@ import { cn } from "../../../lib/utils";
 import { cva } from "class-variance-authority"
 
 const titleVariants = cva(
-    "p-4 transition-all duration-150 linear w-full",
+    "p-4 transition-all duration-150 linear w-full text-slate-600",
     {
         variants: {
             color: {
@@ -40,12 +40,17 @@ const titleVariants = cva(
 )
 
 export interface InputProps {
+    id: string,
+    name: string,
     size: 'xs' | 'sm' | 'md' | 'lg' | 'xl',
     variant?: 'outlined' | 'filled',
     color?: 'primary' | 'secondary' | 'danger' | 'neutral',
     placeholder?: string,
     disabled?: boolean,
-    required?: boolean
+    required?: boolean,
+    value?: string,
+    type?: string,
+    onChange?: (props: any) => any;
 }
 
 const Input = ({size, variant, color, placeholder, disabled, required, ...props}:InputProps) => {
@@ -54,10 +59,9 @@ const Input = ({size, variant, color, placeholder, disabled, required, ...props}
 
     return (
         <Comp
-            placeholder={placeholder}
             className={cn(titleVariants({ size, variant, color, disabled }))}
             {...props}
-            {...{disabled, required}}
+            {...{disabled, required, placeholder}}
         />
     );
 }

@@ -29,10 +29,10 @@ const titleVariants = cva(
 )
 
 export interface LabelProps {
-    size: 'xs' | 'sm',
+    size?: 'xs' | 'sm',
     variant?: 'filled',
     color?: 'primary' | 'secondary' | 'danger' | 'neutral',
-    label: string,
+    label?: string,
     required?:boolean,
 }
 

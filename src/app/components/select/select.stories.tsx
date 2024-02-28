@@ -1,32 +1,26 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Textarea from './textarea.component';
+import Select from './select.component';
 
 const meta = {
-    title: 'Components/Textarea',
-    component: Textarea,
+    title: 'Components/Select',
+    component: Select,
     tags: ['autodocs'],
     argTypes: {
         size: {
             options: ['xs', 'sm', 'md', 'lg', 'xl'],
             control: { type: 'select' },
         },
-        variant: {
-            options: ['outlined', 'filled'],
-            control: { type: 'select' },
-        },
     },
-} satisfies Meta<typeof Textarea >;
+} satisfies Meta<typeof Select >;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
     args: {
-        id: 'textarea',
-        size: "md",
-        variant: "outlined",
-        color: "primary",
+        size: 'md',
+        id: 'select',
         name: 'select'
     },
 };

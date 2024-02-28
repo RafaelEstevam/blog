@@ -39,16 +39,18 @@ const titleVariants = cva(
 )
 
 export interface ButtonProps {
+    id: string,
     label: string,
+    type: string,
     size: 'xs' | 'sm' | 'md' | 'lg' | 'xl',
     fullScreen?: boolean,
     variant?: 'outlined' | 'filled' | 'ghost',
     color?: 'primary' | 'secondary' | 'danger' | 'neutral',
     showIcon?: boolean,
-    icon?: any
+    icon?: any,
 }
 
-const Button = ({label, size, variant, fullScreen, color, showIcon, icon, ...props}:ButtonProps) => {
+const Button = ({label, size, variant, fullScreen, color, showIcon, icon, type, ...props}:ButtonProps) => {
 
     const Comp = "button";
 

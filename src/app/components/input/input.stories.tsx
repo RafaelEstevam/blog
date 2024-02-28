@@ -23,6 +23,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
     args: {
+        id: 'input',
+        name: 'input',
         size: "md",
         variant: "outlined",
         color: "primary"
