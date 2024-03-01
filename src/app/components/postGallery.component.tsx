@@ -1,31 +1,9 @@
-import { gql } from 'graphql-request';
-import {gql_client} from '../services';
 import PostList from './postList/postList.component';
-
+import { getPosts } from '../queries/posts';
 
 const PostGallery = async () => {
 
-    const query = gql`
-    query {
-            posts(where: {postType: post}, orderBy: createdAt_DESC, first: 3){
-                title,
-                slug,
-                shortText,
-                content{
-                    html
-                },
-                categories,
-                createdAt,
-                updatedAt,
-                createdBy{
-                    id,
-                    name
-                }
-            }
-        }
-    `;
-
-    const {posts}:any = await gql_client.request(query);
+    const posts = await getPosts(0,0,3);
 
     return (
         <div className="w-full flex flex-wrap gap-10">
