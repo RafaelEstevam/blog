@@ -7,7 +7,7 @@ const PostGallery = async () => {
 
     const query = gql`
     query {
-            posts(where: {postType: post}, orderBy: createdAt_DESC){
+            posts(where: {postType: post}, orderBy: createdAt_DESC, first: 3){
                 title,
                 slug,
                 shortText,
