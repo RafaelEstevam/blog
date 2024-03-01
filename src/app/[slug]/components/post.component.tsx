@@ -1,5 +1,4 @@
-import {gql_client} from '../../services';
-import {queryPost} from '../query';
+import { getPost } from '@/app/queries/posts';
 
 import PostContent from "./content.component";
 import PostDetails from "./details.component";
@@ -25,16 +24,10 @@ interface PostComponentProps{
     slug: string
 }
 
-async function getData(variables:any) {
-    const {post}:any = await gql_client.request(queryPost, variables);
-    const item:PostProps = post
-    return item;
-}
-
 const PostComponent = async ({slug}:PostComponentProps) => {
 
     const variables = { slug };
-    const post:any = await getData(variables);
+    const post:PostProps = await getPost(variables);
     
     const title= post.title;
     const content = post.content;
