@@ -11,6 +11,15 @@ const gql_client = new GraphQLClient(HYGRAPH_URL, {
     next:{revalidate: 10}
 });
 
+function getNodeIndex(node: any) {
+  var index = 0;
+  while (node = node.previousElementSibling) {
+      index++;
+  }
+  return index;
+}
+
 export {
-    gql_client
+    gql_client,
+    getNodeIndex
 };

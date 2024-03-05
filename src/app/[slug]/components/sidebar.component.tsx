@@ -1,6 +1,7 @@
 "use client"
 
 import {LoadingIcon} from "@/app/components/loading.component";
+import { getNodeIndex } from "@/app/services";
 import { useEffect, useState } from "react";
 
 const PostSidebar = () => {
@@ -11,14 +12,23 @@ const PostSidebar = () => {
 
     const handleAddAnchors = () => {
         const content = document.getElementsByClassName('content')[0];
-        const heading1 = [document.getElementById("title")];
-        const heading2 = Array.prototype.slice.call(content.getElementsByTagName('h2'));
-        const heading3 = Array.prototype.slice.call(content.getElementsByTagName('h3'));
-        const heading4 = Array.prototype.slice.call(content.getElementsByTagName('h4'));
-        const ancors = [...heading1, ...heading2, ...heading3, ...heading4];
+
+        const headers = Array.from([document.getElementById("title")])
+        .concat(Array.from(content.querySelectorAll('h2')))
+        .concat(Array.from(content.querySelectorAll('h3')))
+        .concat(Array.from(content.querySelectorAll('h4')))
+        .concat(Array.from(content.querySelectorAll('h5')))
+        .concat(Array.from(content.querySelectorAll('h6')));
+        
+        let ancors = Array.from(headers);
+
+        ancors.sort(function(a, b) {
+            return getNodeIndex(a) - getNodeIndex(b);
+        });
+
         ancors.map((item, index) => {
             if(index > 0){
-                item.setAttribute('id', index);
+                item?.setAttribute('id', index.toString());
             }
             return item;
         });
