@@ -3,6 +3,7 @@
 import {LoadingIcon} from "@/app/components/loading.component";
 import { getNodeIndex } from "@/app/services";
 import { useEffect, useState } from "react";
+import PostLike from "./like.component";
 
 const PostSidebar = () => {
 
@@ -78,6 +79,7 @@ const PostSidebar = () => {
                     ))}
                 </ul>
             </div>
+            <PostLike />
         </div>
     ) : (
         <div className="w-full flex justify-center">

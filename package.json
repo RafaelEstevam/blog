@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@rafaelestevam/escomponents": "^1.0.0",
+    "@remixicon/react": "^4.2.0",
     "graphql-request": "^6.1.0",
     "highlight.js": "^11.9.0",
     "moment": "^2.30.1",

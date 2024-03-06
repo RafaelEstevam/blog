@@ -1,6 +1,7 @@
 import PostSidebar from "./sidebar.component";
 
 const PostContent = async ({content}:any) => {
+
     return (
         <div className="gap-10 w-full xl:w-full xl:flex xl:justify-center">
             <div className="hidden xl:block xl:w-1/6">

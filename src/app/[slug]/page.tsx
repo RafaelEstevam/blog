@@ -45,6 +45,8 @@ const Page = async ({params}:any) => {
     const autor = post.createdBy.name;
     const categories = post.categories;
 
+    console.log(post);
+
     return (
         <>
             <PostImage {...{image, title}} />
