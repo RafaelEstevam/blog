@@ -5,7 +5,7 @@ import { getNodeIndex } from "@/app/services";
 import { useEffect, useState } from "react";
 import PostLike from "./like.component";
 
-const PostSidebar = () => {
+const PostSidebar = ({likes, id}:any) => {
 
     const [ancorsPost, setAncorsPost] = useState<any[]>([]);
     const [ancorsPostList, setAncorsPostList] = useState<any[]>([]);
@@ -79,7 +79,7 @@ const PostSidebar = () => {
                     ))}
                 </ul>
             </div>
-            <PostLike />
+            <PostLike {...{likes, id}} />
         </div>
     ) : (
         <div className="w-full flex justify-center">

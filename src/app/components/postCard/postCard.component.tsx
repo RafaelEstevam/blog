@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import PostCategory from '../postCategory.component';
-import { PostProps } from '../../[slug]/components/post.component';
+import { PostProps } from '../../[slug]/post.interface';
+import { RiThumbUpFill } from "@remixicon/react";
 import moment from 'moment';
 
 interface PostCardProps {
@@ -17,6 +18,7 @@ interface PostTitleProps {
     heading?: 'H1' | 'H2' | 'H3',
     title: string,
     slug: string,
+    likes?: number
 }
 
 const PostTitle = ({ heading, slug, title}: PostTitleProps) => {
@@ -75,6 +77,9 @@ const PostCard = ({ heading, showShort, post, isList, index, highlight}: PostCar
                         <p className='bg-slate-500 py-1 px-2 rounded-lg text-white'>{post.shortText}</p>
                         {post?.createdBy && (
                             <p className='text-center text-white'>por <strong>{post?.createdBy?.name}</strong></p>
+                        )}
+                        {post.likes && (
+                            <div className='flex gap-4 items-center justify-center'> <RiThumbUpFill /> {post.likes}</div>
                         )}
                     </div>
                 )}

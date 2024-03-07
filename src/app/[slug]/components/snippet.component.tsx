@@ -3,14 +3,16 @@
 import hljs from 'highlight.js';
 import { useEffect } from "react";
 
-const PostSnippet = ({children}:any) => {
+import { PostContext } from '../context';
+
+const PostSnippet = ({content, likes, id, children }:any) => {
     
     useEffect(() => {
         hljs.highlightAll();
     })
 
     return (
-        <>{children}</>
+        <PostContext.Provider value={{content, likes, id}}>{children}</PostContext.Provider>
     )
 };
 

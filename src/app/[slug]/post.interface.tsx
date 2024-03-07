@@ -1,4 +1,5 @@
 export interface PostProps {
+    id?: string,
     title: string,
     content: any,
     gallery: any[],
@@ -10,4 +11,5 @@ export interface PostProps {
     },
     createdAt: string,
     updatedAt: string,
+    likes?: number,
 };
