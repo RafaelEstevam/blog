@@ -8,7 +8,7 @@ import { PostContext } from "../context";
 
 const PostSidebar = () => {
 
-    const {id} = useContext(PostContext);
+    const {id}:any = useContext(PostContext);
 
     const [ancorsPost, setAncorsPost] = useState<any[]>([]);
     const [ancorsPostList, setAncorsPostList] = useState<any[]>([]);
