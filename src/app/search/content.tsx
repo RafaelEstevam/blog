@@ -25,6 +25,8 @@ const SearchContent = () => {
                     where: {
                         OR: {title_contains: "${search}"}
                     }, orderBy: createdAt_DESC){
+                    id,
+                    likes,
                     title,
                     slug,
                     shortText,

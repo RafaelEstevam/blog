@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { PostProps } from '../../[slug]/components/post.component';
+import { PostProps } from '../../[slug]/post.interface';
 import PostCard from '../postCard/postCard.component';
 
 export interface PostListProps {

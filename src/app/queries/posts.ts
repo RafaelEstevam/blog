@@ -1,11 +1,12 @@
 import { gql } from 'graphql-request';
 import {gql_client} from '../services';
-import { PostProps } from '../[slug]/components/post.component';
+import { PostProps } from '../[slug]/post.interface';
 
 export const getPosts = async (skip:number, page:number, first: number) => {
     const query = gql`
     query {
             posts(where: {postType: post}, orderBy: createdAt_DESC, first: ${first}, skip: ${skip + page}){
+                id,
                 title,
                 slug,
                 shortText,
@@ -18,7 +19,8 @@ export const getPosts = async (skip:number, page:number, first: number) => {
                 createdBy{
                     id,
                     name
-                }
+                },
+                likes
             }
         }
     `;
@@ -35,7 +37,8 @@ export const getAllPosts = async () => {
                 id,
                 slug,
                 title,
-                shortText
+                shortText,
+                likes
             }
         }
     `;
@@ -51,6 +54,7 @@ export const getPost = async (variables:any) => {
     const query = gql`
         query Posts($slug:String!) {
             post(where:{slug:$slug}){
+                id,
                 title,
                 slug,
                 content{
@@ -67,7 +71,8 @@ export const getPost = async (variables:any) => {
                 createdBy{
                     id,
                     name
-                }
+                },
+                likes
             }
         }
     `;
@@ -77,3 +82,25 @@ export const getPost = async (variables:any) => {
     return item;
     
 };
+
+export const IncreaseLikeByPost = async(variables:any) => {
+
+    const mutation = gql`
+        mutation Post($id:ID!, $likes: Int!) {
+            updatePost(	
+            where: {id:$id }
+            data: {likes:$likes}
+        ){
+            id
+            likes
+        }
+            publishPost(to: PUBLISHED, where: {id:$id }) {
+                id
+            }
+        }
+    `;
+
+    const {publishPost, updatePost}:any = await gql_client.request(mutation, variables);
+    return {publishPost, updatePost} ;
+
+}

@@ -1,7 +1,7 @@
 "use client";
 import { useCallback, useState } from 'react';
 import PostList from './postList/postList.component';
-import { PostProps } from '../[slug]/components/post.component';
+import { PostProps } from '../[slug]/post.interface';
 import { getPosts } from '../queries/posts';
 
 

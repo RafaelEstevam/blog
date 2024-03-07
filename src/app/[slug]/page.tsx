@@ -1,5 +1,5 @@
 
-import { PostProps } from "./components/post.component";
+import { PostProps } from "./post.interface";
 
 import PostTitle from "./components/title.component";
 import PostImage from "./components/image.component";
@@ -38,20 +38,22 @@ const Page = async ({params}:any) => {
     const variables = {slug}
     const post= await getPost(variables);
 
+    const id= post.id;
     const title= post.title;
     const content = post.content;
     const image = post.gallery;
     const createdAt = post.updatedAt;
     const autor = post.createdBy.name;
     const categories = post.categories;
+    const likes = post.likes;
 
     return (
         <>
             <PostImage {...{image, title}} />
             <PostTitle {...{title, categories}}/>
             <PostDetails {...{createdAt, autor}} />
-            <PostSnippet>
-                <PostContent {...{content}}/>
+            <PostSnippet {...{content, likes, id}}>
+                <PostContent {...{content }} />
             </PostSnippet>
             <PostShare {...{slug}} />
         </>
