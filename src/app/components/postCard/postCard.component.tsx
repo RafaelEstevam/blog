@@ -3,6 +3,7 @@ import PostCategory from '../postCategory.component';
 import { PostProps } from '../../[slug]/post.interface';
 import { RiThumbUpFill } from "@remixicon/react";
 import moment from 'moment';
+import PostLike from '@/app/[slug]/components/like.component';
 
 interface PostCardProps {
     post: PostProps,
@@ -79,7 +80,9 @@ const PostCard = ({ heading, showShort, post, isList, index, highlight}: PostCar
                             <p className='text-center text-white'>por <strong>{post?.createdBy?.name}</strong></p>
                         )}
                         {post.likes && (
-                            <div className='flex gap-4 items-center justify-center'> <RiThumbUpFill /> {post.likes}</div>
+                            <div className='flex justify-center w-full'>
+                                <PostLike {...{like: post.likes, disabledButton: true}} />
+                            </div>
                         )}
                     </div>
                 )}
