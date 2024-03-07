@@ -15,7 +15,7 @@ const PostLike = ({like, disabledButton}:PostLikeProps) => {
 
     const {id, likes}: any = useContext(PostContext);
     const [count, setCount] = useState<number>(likes | like);
-    const [disabled, setDisabled] = useState<boolean>(disabledButton);
+    const [disabled, setDisabled] = useState<boolean>(false);
     const [loading, setLoading] = useState(false);
 
     const handleSetStates = (updatePost:any) => {
@@ -31,18 +31,25 @@ const PostLike = ({like, disabledButton}:PostLikeProps) => {
         handleSetStates(updatePost);
     }, [count]);
 
-    return loading ?(
-            <LoadingIcon />
-        ) : (
-            <div className="flex gap-8 items-center mt-4">
-                <button id="like" disabled={disabled} onClick={() => handleIncrease()} className={`border-2 border-blue-700 px-10 py-5 rounded-xl ${disabled && 'opacity-50 border-0 px-0 py-0'}`}>
+    return (
+        <div className="flex gap-8 items-center mt-8">
+            {loading && (<LoadingIcon />)}
+
+            {disabledButton ? (
+                <div>
+                    <RiThumbUpFill />
+                </div>
+            ): (
+                <button id="like" disabled={disabled} onClick={() => handleIncrease()} className={`border-2 border-blue-700 px-10 py-5 rounded-xl ${disabled && 'opacity-50'}`}>
                     <RiThumbUpFill />
                 </button>
-                <p>
-                    {count}
-                </p>
-            </div>
-        )
+            )}
+
+            <p>{count}</p>
+            
+        </div>
+    );
+
 };
 
 export default PostLike;
