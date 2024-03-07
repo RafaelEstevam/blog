@@ -79,7 +79,7 @@ const PostSidebar = ({likes, id}:any) => {
                     ))}
                 </ul>
             </div>
-            <PostLike {...{likes, id}} />
+            <PostLike />
         </div>
     ) : (
         <div className="w-full flex justify-center">
