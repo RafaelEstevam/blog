@@ -2,10 +2,13 @@
 
 import {LoadingIcon} from "@/app/components/loading.component";
 import { getNodeIndex } from "@/app/services";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import PostLike from "./like.component";
+import { PostContext } from "../context";
 
-const PostSidebar = ({likes, id}:any) => {
+const PostSidebar = () => {
+
+    const {id} = useContext(PostContext);
 
     const [ancorsPost, setAncorsPost] = useState<any[]>([]);
     const [ancorsPostList, setAncorsPostList] = useState<any[]>([]);
@@ -79,7 +82,7 @@ const PostSidebar = ({likes, id}:any) => {
                     ))}
                 </ul>
             </div>
-            <PostLike like={0} disabledButton={false} />
+            <PostLike id={id} disabledButton={false} />
         </div>
     ) : (
         <div className="w-full flex justify-center">

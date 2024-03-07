@@ -103,4 +103,19 @@ export const IncreaseLikeByPost = async(variables:any) => {
     const {publishPost, updatePost}:any = await gql_client.request(mutation, variables);
     return {publishPost, updatePost} ;
 
+};
+
+export const getLikesByPost = async(variables: any) => {
+    const query = gql`
+        query Posts($id:ID!) {
+            post(where:{id:$id}){
+                id,
+                likes
+            }
+        }
+    `;
+
+    const {post}:any = await gql_client.request(query, variables);
+    const item:PostProps = post;
+    return item;
 }

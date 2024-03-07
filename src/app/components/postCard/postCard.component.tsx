@@ -81,7 +81,7 @@ const PostCard = ({ heading, showShort, post, isList, index, highlight}: PostCar
                         )}
                         {post.likes && (
                             <div className='flex justify-center w-full'>
-                                <PostLike {...{like: post.likes, disabledButton: true}} />
+                                <PostLike {...{id: post.id, disabledButton: true}} />
                             </div>
                         )}
                     </div>
