@@ -43,22 +43,23 @@ const PostLike = ({disabledButton, id}:PostLikeProps) => {
     }, [disabledButton])
 
     return (
-        <div className="flex gap-8 items-center mt-8">
-            {loading && (<LoadingIcon />)}
+        // <div className="flex gap-8 items-center mt-8">
+        //     {loading && (<LoadingIcon />)}
 
-            {disabledButton && !loading && (
-                <RiThumbUpFill />
-            )}
+        //     {disabledButton && !loading && (
+        //         <RiThumbUpFill />
+        //     )}
 
-            {!disabledButton && (
-                <button id="like" disabled={disabled} onClick={() => handleIncrease()} className={`border-2 border-blue-700 px-10 py-5 rounded-xl ${disabled && 'opacity-50'}`}>
-                    <RiThumbUpFill />
-                </button>
-            )}
+        //     {!disabledButton && (
+        //         <button id="like" disabled={disabled} onClick={() => handleIncrease()} className={`border-2 border-blue-700 px-10 py-5 rounded-xl ${disabled && 'opacity-50'}`}>
+        //             <RiThumbUpFill />
+        //         </button>
+        //     )}
 
-            <p>{count}</p>
+        //     <p>{count}</p>
             
-        </div>
+        // </div>
+        <></>
     );
 
 };
