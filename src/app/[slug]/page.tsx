@@ -49,13 +49,15 @@ const Page = async ({params}:any) => {
 
     return (
         <>
-            <PostImage {...{image, title}} />
-            <PostTitle {...{title, categories}}/>
-            <PostDetails {...{createdAt, autor}} />
-            <PostSnippet {...{content, likes, id}}>
-                <PostContent {...{content }} />
-            </PostSnippet>
-            <PostShare {...{slug}} />
+            <article className="md:w-3/4 flex flex-col items-center gap-8">
+                <PostImage {...{image, title}} />
+                <PostTitle {...{title, categories}}/>
+                <PostDetails {...{createdAt, autor}} />
+                <PostSnippet {...{content, likes, id}}>
+                    <PostContent {...{content }} />
+                </PostSnippet>
+                <PostShare {...{slug}} />
+            </article>
         </>
     )
 };

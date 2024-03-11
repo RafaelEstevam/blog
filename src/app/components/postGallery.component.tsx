@@ -3,7 +3,7 @@ import { getPosts } from '../queries/posts';
 
 const PostGallery = async () => {
 
-    const posts = await getPosts(0,0,3);
+    const posts = await getPosts(1,0,3);
 
     return (
         <div className="w-full flex flex-wrap gap-10">

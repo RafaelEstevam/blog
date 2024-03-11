@@ -3,7 +3,7 @@ import PostSidebar from "./sidebar.component";
 const PostContent = async ({content}:any) => {
 
     return (
-        <div className="gap-10 w-full xl:w-full xl:flex xl:justify-center">
+        <div className="gap-8 w-full xl:w-full xl:flex xl:justify-center">
             <div className="hidden xl:block xl:w-1/6">
                 <PostSidebar />
             </div>
@@ -17,6 +17,8 @@ const PostContent = async ({content}:any) => {
                 xl:w-4/6
             `}
             dangerouslySetInnerHTML={{__html: content.html}} />
+            <div className="hidden xl:block xl:w-1/6">
+            </div>
         </div>
         
         

@@ -20,7 +20,11 @@ export const getPosts = async (skip:number, page:number, first: number) => {
                     id,
                     name
                 },
-                likes
+                likes,
+                gallery {
+                    id,
+                    url,
+                },
             }
         }
     `;

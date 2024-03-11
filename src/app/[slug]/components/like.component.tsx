@@ -8,19 +8,20 @@ import {LoadingIcon} from "@/app/components/loading.component";
 
 interface PostLikeProps {
     id?: string,
-    disabledButton: boolean
+    // disabledButton: boolean,
+    offline?: boolean
 }
 
-const PostLike = ({disabledButton, id}:PostLikeProps) => {
+const PostLike = ({id, offline}:PostLikeProps) => {
 
-    const {likes}: any = useContext(PostContext);
+    const [likes, setLikes] = useState<number>(0);
     const [count, setCount] = useState<number>(likes);
     const [disabled, setDisabled] = useState<boolean>(false);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     const handleSetStates = (updatePost:any) => {
         setCount(updatePost.likes);
-        setDisabled(true);
+        setLikes(updatePost.likes);
         setLoading(false);
     }
 
@@ -29,6 +30,7 @@ const PostLike = ({disabledButton, id}:PostLikeProps) => {
         const variables = {id: id, likes: likes + 1}
         const {updatePost} = await IncreaseLikeByPost(variables);
         handleSetStates(updatePost);
+        setDisabled(true);
     }, [count]);
 
     const handleGetLikes = async () => {
@@ -39,27 +41,25 @@ const PostLike = ({disabledButton, id}:PostLikeProps) => {
     }
 
     useEffect(() => {
-        if(disabledButton) handleGetLikes();
-    }, [disabledButton])
+        handleGetLikes();
+    }, [])
 
-    return (
-        // <div className="flex gap-8 items-center mt-8">
-        //     {loading && (<LoadingIcon />)}
+    return !offline ? (
+        <div className="flex gap-8 items-center mt-8">
+            {loading && (<LoadingIcon />)}
 
-        //     {disabledButton && !loading && (
-        //         <RiThumbUpFill />
-        //     )}
+            <button id="like" disabled={disabled} onClick={() => handleIncrease()} className={`border-2 border-blue-700 px-10 py-5 rounded-xl ${disabled && 'opacity-30'}`}>
+                <RiThumbUpFill />
+            </button>
 
-        //     {!disabledButton && (
-        //         <button id="like" disabled={disabled} onClick={() => handleIncrease()} className={`border-2 border-blue-700 px-10 py-5 rounded-xl ${disabled && 'opacity-50'}`}>
-        //             <RiThumbUpFill />
-        //         </button>
-        //     )}
-
-        //     <p>{count}</p>
+            <p>{count}</p>
             
-        // </div>
-        <></>
+        </div>
+    ) : (
+        <div className='flex items-center gap-4'>
+            {loading ? (<LoadingIcon />) : (<RiThumbUpFill />)}
+            {likes}
+        </div>
     );
 
 };
