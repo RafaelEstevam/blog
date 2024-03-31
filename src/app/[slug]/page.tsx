@@ -49,7 +49,7 @@ const Page = async ({params}:any) => {
 
     return (
         <>
-            <article className="md:w-3/4 flex flex-col items-center gap-8">
+            <article className="w-full flex flex-col items-center gap-8">
                 <PostImage {...{image, title}} />
                 <PostTitle {...{title, categories}}/>
                 <PostDetails {...{createdAt, autor}} />

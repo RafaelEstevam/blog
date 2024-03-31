@@ -77,7 +77,7 @@ const PostSidebar = () => {
                 <ul>
                     {ancorsPostList.length > 0 && ancorsPostList.map((item) => (
                         <li key={item.id}>
-                            <a className="block p-4 hover:bg-[#00000030] text-xs" href={`#${item.id}`}>{item.text}</a>
+                            <a className="block p-4 text-white hover:bg-[#00000030] text-xs" href={`#${item.id}`}>{item.text}</a>
                         </li>
                     ))}
                 </ul>

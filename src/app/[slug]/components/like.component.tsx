@@ -48,15 +48,15 @@ const PostLike = ({id, offline}:PostLikeProps) => {
         <div className="flex gap-8 items-center mt-8">
             {loading && (<LoadingIcon />)}
 
-            <button id="like" disabled={disabled} onClick={() => handleIncrease()} className={`border-2 border-blue-700 px-10 py-5 rounded-xl ${disabled && 'opacity-30'}`}>
+            <button id="like" disabled={disabled} onClick={() => handleIncrease()} className={`text-white border-2 border-blue-700 px-10 py-5 rounded-xl ${disabled && 'opacity-30'}`}>
                 <RiThumbUpFill />
             </button>
 
-            <p>{count}</p>
+            <p className="text-white">{count}</p>
             
         </div>
     ) : (
-        <div className='flex items-center gap-4'>
+        <div className='flex items-center gap-4 text-white'>
             {loading ? (<LoadingIcon />) : (<RiThumbUpFill />)}
             {likes}
         </div>

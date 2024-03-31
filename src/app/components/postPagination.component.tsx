@@ -39,7 +39,7 @@ const PostPagination = () => {
             <button
                 disabled={disabled}
                 onClick={() => handleGetPosts()}
-                className={`bg-blue-600 ${disabled && 'bg-slate-500'} w-full p-4 rounded-2xl hover:bg-blue-800 ${disabled && 'hover:bg-slate-500'}`}>
+                className={`bg-blue-600 ${disabled && 'bg-slate-500'} text-white w-full p-4 rounded-2xl hover:bg-blue-800 ${disabled && 'hover:bg-slate-500'}`}>
                 {!disabled ? 'Buscar mais posts' : 'Sem novos posts'}
             </button>
         </>
