@@ -36,7 +36,7 @@ const Page = async ({params}:any) => {
 
     const {slug} = params;
     const variables = {slug}
-    const post= await getPost(variables);
+    const post = await getPost(variables);
 
     const id= post.id;
     const title= post.title;
@@ -46,16 +46,19 @@ const Page = async ({params}:any) => {
     const autor = post.createdBy.name;
     const categories = post.categories;
     const likes = post.likes;
+    const relatedPosts = post.relatedPosts;
 
     return (
         <>
-            <PostImage {...{image, title}} />
-            <PostTitle {...{title, categories}}/>
-            <PostDetails {...{createdAt, autor}} />
-            <PostSnippet {...{content, likes, id}}>
-                <PostContent {...{content }} />
-            </PostSnippet>
-            <PostShare {...{slug}} />
+            <article className="w-full flex flex-col items-center gap-8">
+                <PostImage {...{image, title}} />
+                <PostTitle {...{title, categories}}/>
+                <PostDetails {...{createdAt, autor}} />
+                <PostSnippet {...{content, likes, id}}>
+                    <PostContent {...{content, relatedPosts }} />
+                </PostSnippet>
+                <PostShare {...{slug}} />
+            </article>
         </>
     )
 };

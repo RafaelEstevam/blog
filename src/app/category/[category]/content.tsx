@@ -32,7 +32,11 @@ const CategoryContent =  () => {
                     createdBy{
                         id,
                         name
-                    }
+                    },
+                    gallery {
+                        id,
+                        url,
+                    },
                 }
             }
         `;
@@ -46,7 +50,7 @@ const CategoryContent =  () => {
     }, [])
 
     return loading ? (
-        <h3>Carregando...</h3>
+        <h3 className='text-white'>Carregando...</h3>
     ) : (
         <div className='w-full flex flex-col gap-10'>
             <p className="text-white">Categoria <b>{category}</b></p>

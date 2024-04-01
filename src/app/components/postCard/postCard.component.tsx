@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import PostCategory from '../postCategory.component';
 import { PostProps } from '../../[slug]/post.interface';
-import { RiThumbUpFill } from "@remixicon/react";
 import moment from 'moment';
 import PostLike from '@/app/[slug]/components/like.component';
 

@@ -39,7 +39,11 @@ const SearchContent = () => {
                     createdBy{
                         id,
                         name
-                    }
+                    },
+                    gallery {
+                        id,
+                        url,
+                    },
                 }
             }`;
 
