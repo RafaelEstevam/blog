@@ -13,7 +13,7 @@ const Header = async () => {
                     <h1 className="font-bold text-4xl text-white">R&O</h1>
                 </a>
             </div>
-            <div className="relative z-10 hidden xl:block">
+            <div className="relative z-10 hidden md:block xl:block">
                 <SearchComponent />
             </div>
         </header>

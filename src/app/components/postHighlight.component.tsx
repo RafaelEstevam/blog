@@ -12,11 +12,13 @@ const PostHighlight = async () => {
     const posts:PostProps[] = await getPosts(0,0,1);
 
     return (
-        <div className="w-full flex flex-wrap justify-between border-2 border-slate-700 rounded-2xl overflow-hidden">
-            <div className="md:w-2/3">
-                <Image src={`${posts[0].gallery[0].url}`} width={917} height={412} alt='' className="w-auto h-full" />
+        <div className="w-full flex flex-col border-2 border-slate-700 rounded-2xl overflow-hidden md:flex-row">
+            <div className={`w-full h-56 md:w-2/3 md:min-h-[440px] bg-cover`} style={{
+                backgroundImage: `url(${posts[0].gallery[0].url})`,
+                backgroundPosition: 'left center'
+            }}>
             </div>
-            <div className='p-10 bg-slate-700 md:w-1/3 md:flex md:flex-col md:justify-between'>
+            <div className='p-10 bg-slate-700 md:w-1/3 flex flex-col md:justify-between gap-4'>
                 <div className="w-full flex flex-col gap-4">
                     <Link href={`${posts[0].slug}`} title={posts[0].title}>
                         <h1 id="title" className="font-bold text-3xl text-left w-full text-white hover:underline">{posts[0].title}</h1>

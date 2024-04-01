@@ -13,7 +13,7 @@ export interface PostListProps {
 const PostList = ({postsList, isList, heading, showShort}:PostListProps) => {
     
     return (
-        <div className={`w-full flex gap-10`}>
+        <div className={`w-full flex flex-col gap-8`}>
             {postsList.map((post:PostProps, i) => {
 
                 // const idx = i % 5 === 4 && 1;
