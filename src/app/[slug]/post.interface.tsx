@@ -19,5 +19,5 @@ export interface PostProps {
     createdAt: string,
     updatedAt: string,
     likes?: number,
-    relatedPosts: RelatedPost[]
+    relatedPosts?: RelatedPost[]
 };

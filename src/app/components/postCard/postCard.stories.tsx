@@ -35,6 +35,7 @@ export const Primary: Story = {
             updatedAt: '06/20/1992',
             categories: ['Categoria 1', 'Categoria 2', 'Categoria 3'],
             shortText: 'Só mais um post no storybook',
+            relatedPosts: [{id: '', shortText: '', slug: '', title: ''}]
         },
     },
 };
