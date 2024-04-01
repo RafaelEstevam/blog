@@ -17,7 +17,7 @@ const PostCard = ({ post}: PostCardProps) => {
     return (
         <Link href={`${post.slug}`} title={post.title} className='transition-all duration-200 ease-linear border-2 border-slate-700 overflow-hidden rounded-2xl opacity-80 hover:opacity-100 hover:border-blue-600'>
             <div className="w-full flex flex-col md:flex-row">
-                <div className={`w-full h-56 md:w-2/4 md:min-h-64 bg-cover`} style={{
+                <div className={`w-full min-h-56 md:w-2/4 md:min-h-64 bg-cover`} style={{
                     backgroundImage: `url(${post.gallery[0].url})`,
                     backgroundPosition: 'left center'
                 }}>

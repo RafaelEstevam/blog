@@ -29,13 +29,16 @@ const Categories = async () => {
     const categories = await getCategories();
 
     return (
-        <ul className='w-full flex flex-wrap gap-4'>
-            {categories.map((item) => (
-                <li key={item.id} >
-                    <Link href={`/category/${item.slug}`} className='block transition-all duration-150 ease-linear p-4 border-2 border-slate-700 rounded-xl hover:border-blue-600'>{item.name}</Link>
-                </li>
-            ))}
-        </ul>
+        <div className="w-full flex flex-col gap-8">
+            <h3 className="text-3xl font-bold text-white">Categorias</h3>
+            <ul className='w-full flex flex-wrap gap-4'>
+                {categories.map((item) => (
+                    <li key={item.id} >
+                        <Link href={`/category/${item.slug}`} className='block transition-all duration-150 ease-linear p-4 border-2 border-slate-700 rounded-xl hover:border-blue-600'>{item.name}</Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
     )
 };
 

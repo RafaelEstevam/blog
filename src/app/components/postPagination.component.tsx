@@ -7,9 +7,9 @@ import { getPosts } from '../queries/posts';
 
 const PostPagination = () => {
 
-    const skip = 3;
-    const first = 3;
-    const pagination = 3;
+    const skip = 10;
+    const first = 10;
+    const pagination = 10;
 
     const [page, setPage] = useState(0);
     const [newPosts, setNewPosts] = useState<PostProps[]>([]);

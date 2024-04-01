@@ -1,3 +1,10 @@
+export interface RelatedPost {
+    id: string,
+    title: string,
+    slug: string,
+    shortText: string
+}
+
 export interface PostProps {
     id?: string,
     title: string,
@@ -12,4 +19,5 @@ export interface PostProps {
     createdAt: string,
     updatedAt: string,
     likes?: number,
+    relatedPosts: RelatedPost[]
 };

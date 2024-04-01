@@ -61,22 +61,33 @@ export const getPost = async (variables:any) => {
                 id,
                 title,
                 slug,
+                shortText,
                 content{
                     html
-                },
-                gallery {
-                    id,
-                    url,
                 },
                 categories,
                 createdAt,
                 updatedAt,
-                shortText,
                 createdBy{
                     id,
                     name
                 },
-                likes
+                likes,
+                gallery {
+                    id,
+                    url,
+                },
+                relatedPosts{
+                    id,
+                    title,
+                    slug,
+                    shortText
+                },
+                postCategories{
+                    id,
+                    name,
+                    slug
+                }
             }
         }
     `;

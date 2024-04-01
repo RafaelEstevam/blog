@@ -14,8 +14,7 @@ export default function Home() {
             <PostGallery/>
             <PostPagination />
           </div>
-          <div className="w-full md:w-1/3 flex flex-col gap-8">
-            <h3 className="text-3xl font-bold text-white">Categorias</h3>
+          <div className="w-full md:w-1/3 hidden flex-col gap-8 md:flex">
             <Categories />
           </div>
         </div>
