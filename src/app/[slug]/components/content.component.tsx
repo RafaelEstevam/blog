@@ -5,7 +5,7 @@ import PostSidebar from "./sidebar.component";
 
 interface PostContentProps {
     content: any,
-    relatedPosts: RelatedPost[]
+    relatedPosts?: RelatedPost[]
 }
 
 const PostContent = async ({content, relatedPosts}:PostContentProps) => {
