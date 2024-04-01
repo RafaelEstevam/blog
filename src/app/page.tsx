@@ -10,7 +10,7 @@ export default function Home() {
         <PostHighlight />
         <div className="w-full flex gap-8">
           <div className="w-full md:w-2/3 flex flex-col gap-8">
-            <h3 className="text-3xl font-bold text-white">Últimas postagens</h3>
+            <h3 className="text-2xl font-bold text-white">Últimas postagens</h3>
             <PostGallery/>
             <PostPagination />
           </div>

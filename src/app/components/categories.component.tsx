@@ -30,7 +30,7 @@ const Categories = async () => {
 
     return (
         <div className="w-full flex flex-col gap-8">
-            <h3 className="text-3xl font-bold text-white">Categorias</h3>
+            <h3 className="text-2xl font-bold text-white">Categorias</h3>
             <ul className='w-full flex flex-wrap gap-4'>
                 {categories.map((item) => (
                     <li key={item.id} >

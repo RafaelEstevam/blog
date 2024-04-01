@@ -8,7 +8,7 @@ interface PostRelatedPostsProps {
 const PostRelatedPosts = ({relatedPosts}:PostRelatedPostsProps) => {
     return (
         <div className="w-full flex flex-col gap-8">
-            <h3 className="text-white text-3xl font-bold">Posts relacionados</h3>
+            <h3 className="text-white text-2xl font-bold">Posts relacionados</h3>
             <ul className='w-full flex flex-wrap gap-4'>
                 {relatedPosts.map((item) => (
                     <li key={item.id} >
