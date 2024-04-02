@@ -53,7 +53,7 @@ const CategoryContent =  () => {
         <h3 className='text-white'>Carregando...</h3>
     ) : (
         <div className='w-full flex flex-col gap-10'>
-            <p className="text-white">Categoria <b>{category}</b></p>
+            <h2 className="text-white text-2xl">Resultado de: <b className='text-2xl'>{category}</b></h2>
             <div className='w-full flex flex-col gap-10'>
                 <PostList postsList={posts} isList heading='H2' showShort/>
             </div>

@@ -18,7 +18,7 @@ const PostHighlight = async () => {
                 backgroundPosition: 'left center'
             }}>
             </div>
-            <div className='p-10 bg-slate-700 md:w-1/3 flex flex-col md:justify-between gap-4'>
+            <div className='p-10 md:w-1/3 flex flex-col md:justify-between gap-4'>
                 <div className="w-full flex flex-col gap-4">
                     <Link href={`${posts[0].slug}`} title={posts[0].title}>
                         <h1 id="title" className="font-bold text-3xl text-left w-full text-white hover:underline">{posts[0].title}</h1>
@@ -26,7 +26,7 @@ const PostHighlight = async () => {
                     {posts[0]?.categories && posts[0]?.categories.length > 0 && <PostCategory {...{categories: posts[0].categories}} />}
                     <p className="text-white">{moment(new Date(posts[0].createdAt)).format('DD/MM/YYYY')}</p>
                 </div>
-                <div className='bg-slate-500 py-1 px-2 rounded-lg'>
+                <div className='bg-slate-700 py-1 px-2 rounded-lg'>
                     <p className='text-white'>{posts[0].shortText}</p>
                 </div>
                 <div className='flex justify-between'>

@@ -15,7 +15,7 @@ const NavComponent = () => {
                 fixed
                 top-0
                 left-0
-                bg-[#00000099]
+                bg-[#000000cf]
                 h-full
                 w-full
                 py-6

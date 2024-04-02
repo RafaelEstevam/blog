@@ -15,15 +15,7 @@ const PostList = ({postsList, isList, heading, showShort}:PostListProps) => {
     return (
         <div className={`w-full flex flex-col gap-8`}>
             {postsList.map((post:PostProps, i) => {
-
-                // const idx = i % 5 === 4 && 1;
-                // const index = idx === 1 ? idx : i;
-
                 return (
-                    // <PostCard
-                    //     {...{post, isList, index, heading, showShort, highlight: index === 0 && !isList }}
-                    //     key={post.title} 
-                    // />
                     <PostCardV2
                         {...{post, isList, heading, showShort }}
                         key={post.title} 

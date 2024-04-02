@@ -37,7 +37,7 @@ export default function RootLayout({
         `}
       </Script>
       
-      <body className={inter.className}>{children}</body>
+      <body className="bg-black">{children}</body>
     </html>
   );
 }
