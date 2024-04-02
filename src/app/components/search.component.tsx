@@ -16,7 +16,7 @@ const SearchComponent = () => {
 
     return (
         <form onSubmit={(e) => handleSubmit(e)}>
-            <input placeholder='Buscar post' className="bg-slate-600 rounded-2xl text-white w-full p-4" value={term} onChange={(e) => setTerm(e.target.value)} />
+            <input placeholder='Buscar post' className="border-slate-700 border-2 bg-transparent rounded-2xl text-white w-full p-4" value={term} onChange={(e) => setTerm(e.target.value)} />
         </form>
     )
 };

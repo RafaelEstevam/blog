@@ -63,7 +63,7 @@ const SearchContent = () => {
         <h3>Carregando...</h3>
     ) : (
         <div className='w-full flex flex-col gap-10'>
-            <p className="text-white">Resultado de: <b>{search}</b></p>
+            <h2 className="text-white text-2xl">Resultado de: <b className='text-2xl'>{search}</b></h2>
             <div className='w-full flex flex-col gap-10'>
                 <PostList postsList={postsList} isList heading='H2' showShort/>
             </div>
